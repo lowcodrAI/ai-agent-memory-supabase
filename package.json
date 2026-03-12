@@ -1,0 +1,48 @@
+{
+  "name": "ai-agent-memory-supabase",
+  "version": "0.1.0",
+  "description": "Production-ready AI memory system for Supabase. Hybrid search (vector + keyword), auto-extraction, entity linking, temporal invalidation.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "supabase",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "tsc --noEmit",
+    "db:push": "npx supabase db push"
+  },
+  "keywords": [
+    "supabase",
+    "memory",
+    "ai",
+    "llm",
+    "embeddings",
+    "pgvector",
+    "hybrid-search",
+    "rag",
+    "vector-database",
+    "knowledge-base"
+  ],
+  "author": "Valentin Mercier",
+  "license": "MIT",
+  "peerDependencies": {
+    "@supabase/supabase-js": ">=2.0.0"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}
